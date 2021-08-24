@@ -22,8 +22,8 @@ class Catalog extends Component {
                 <h5>We have {this.state.catalog.length} different items for you to choose!</h5>
 
                 <div className="filter-buttons">
-                    <button className="btn btn-dark" onClick={this.clearFilter}>Show All</button>
-                    {this.state.categories.map(cat => <button onClick={()=>{this.filterByCat(cat)}} key={cat} className="btn btn-info">{cat}</button>)}
+                    <button className="btn btn-outline-dark" onClick={this.clearFilter}>Show All</button>
+                    {this.state.categories.map(cat => <button onClick={()=>{this.filterByCat(cat)}} key={cat} className="btn btn-outline-dark">{cat}</button>)}
                 </div>
                 <div className="item-container">
                     {itemsToDisplay.map(obj => <Item key={obj._id} data={obj}></Item>)}

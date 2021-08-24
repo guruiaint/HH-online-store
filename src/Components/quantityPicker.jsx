@@ -7,9 +7,9 @@ class QuantityPicker extends Component {
     render() { 
         return ( 
             <div className="quantity-picker">
-                <button onClick={this.decrease} className="btn btn-sm btn-primary">-</button>
+                <button onClick={this.decrease} className="btn btn-sm btn-secondary">-</button>
                 {this.state.quantity}
-                <button onClick={this.increase} className="btn btn-sm btn-primary">+</button>
+                <button onClick={this.increase} className="btn btn-sm btn-secondary">+</button>
             </div>
          );
     }

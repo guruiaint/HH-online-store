@@ -2,15 +2,17 @@ import React, { Component } from 'react';
 import QuantityPicker from './quantityPicker';
 
 import "./item.css";
+import storeContext from '../Store/storeContext';
 
 class Item extends Component {
+    static contextType = storeContext;
     state = { 
         quantity: 1 
     }
     render() { 
         return ( 
             <div className="item">
-                <img src={"/images/products/" + this.props.data.image} alt="images coming soon" />
+                <img src={"/#products/" + this.props.data.image} alt="images coming soon" />
 
                 <h5>{this.props.data.title}</h5>
 
@@ -19,12 +21,22 @@ class Item extends Component {
 
                 <QuantityPicker onChange={this.handleQuantityChange}></QuantityPicker>
 
-                <button className="btn btn-sm btn-info btn-add">
+                <button onClick={this.handleAddToCart} className="btn btn-sm btn-outline-danger btn-add">
                     <i className="fa fa-cart-plus">🛒</i>
                 </button>
             </div>
          );
          
+    }
+
+    handleAddToCart = () => {
+        let prod = {
+            ...this.props.data,
+            quantity: this.state.quantity,
+        }
+
+        console.log(this.props.data);
+        this.context.addProductToCart(prod);
     }
 
     getTotal=()=> {

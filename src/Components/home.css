@@ -1,0 +1,8 @@
+.home-page{
+    min-height: 600px;
+    background-color: green;
+}
+.home-page h1{
+    text-align: center;
+    color: burlywood;
+}
