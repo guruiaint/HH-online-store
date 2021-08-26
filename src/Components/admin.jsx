@@ -68,13 +68,16 @@ handleInputChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
 }
 
-handleSave = () => {
+handleSave = async () => {
     
     let item = {...this.state};// hard copy // deep copy // deep clone
+    item.price = item.price *1;
+    item.stock = +item.stock;
+    item.minimum = parseInt(item.minimum);
     console.log(item);
 
     let service = new ItemService();
-    service.saveItem(item);
+    await service.saveItem(item);
 
     this.setState({ title: "", showAlert: true});// mirror the inputs state up top
 

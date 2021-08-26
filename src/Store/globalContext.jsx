@@ -12,7 +12,9 @@ class GlobalState extends Component {
                 cart: this.state.cart,
 
                 addProductToCart: this.addProductToCart,
+                removeProductFromCart: this.removeProductFromCart,
             }}
+
             >
                 {this.props.children}
             </storeContext.Provider>
@@ -42,6 +44,19 @@ class GlobalState extends Component {
     
     removeProductFromCart = (productId) => {
         console.log("TODO: remove product");
+        let deleteCart = [...this.state.cart];
+
+        
+        for(let i=0; i<deleteCart.length; i ++){
+            let item = deleteCart[i];
+
+            if(item._id === productId){
+                console.log("delete it");
+                deleteCart.splice(i,1);
+                break;
+            }
+        }
+        this.setState({cart: deleteCart});
     };
 
 };

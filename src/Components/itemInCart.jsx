@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import storeContext from '../Store/storeContext';
-import './itemInCart.css'
+import './itemInCart.css';
 
 
 class ItemInCart extends Component {

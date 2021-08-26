@@ -8,6 +8,7 @@ class Home extends Component {
         return ( 
             <div className="home-page">
                 <h1>Welcome to Homestead Handiwork</h1>
+                <p></p>
             </div>
          );
     }
