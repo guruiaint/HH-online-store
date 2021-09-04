@@ -4,7 +4,7 @@ class Footer extends Component {
     state = {  }
     render() { 
         return ( 
-            <div className="footer">
+            <div className="footer text-white bg-dark">
                 <p>All copyrights ©️ reserved by Homestead Handiwork LLC 2021.
                 </p>
             </div>

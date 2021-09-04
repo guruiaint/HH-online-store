@@ -4,7 +4,9 @@ import Footer from './Components/footer';
 import Catalog from './Components/catalog';
 import Home from './Components/home';
 import About from './Components/about';
-import Cart from './Components/cart'
+import Cart from './Components/cart';
+import OrderPlaced from './Components/orderPlaced';
+import HistoryPurchase from './Components/history';
 
 import GlobalState from './Store/globalContext';
 
@@ -29,6 +31,8 @@ function App() {
           <Route path="/catalog" exact component={Catalog}></Route>
           <Route path="/about" exact component={About}></Route>
           <Route path="/cart" exact component={Cart}></Route>
+          <Route path="/orderPlaced" exact component={OrderPlaced}></Route>
+          <Route path="/history" exact component={HistoryPurchase}></Route>
         </Switch>
           <Footer></Footer>
         </div>

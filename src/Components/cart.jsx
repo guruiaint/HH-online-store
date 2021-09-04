@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import storeContext from '../Store/storeContext';
 import ItemInCart from './itemInCart';
 import './cart.css'
+import ItemService from './../Services/itemService';
 
 
 class Cart extends Component {
@@ -24,7 +25,7 @@ class Cart extends Component {
                     <label>Subtotal:</label>
                     <h6>${this.getCartTotal()}</h6>
 
-                    <button onClick={this.removeProductFromCart} className="btn btn-primary">Proceed to Checkout</button>
+                    <button onClick={this.handleSubmitOrder} className="btn btn-primary">Proceed to Checkout</button>
                 </div>
                 </div>
             </div> 
@@ -37,7 +38,30 @@ class Cart extends Component {
            total += item.price * item.quantity;
        }
         return total.toFixed(2);
-    }
+    };
 }
- 
+
 export default Cart;
+
+{/*handleSubmitOrder = async() => {
+    let order = {
+        userId: 123,
+        couponCode: this.state.couponCode,
+        products: this.context.cart
+    };
+
+    let service = new ItemService();
+    let res = await service.submitOrder(order);
+    if(res){
+    console.log("resonse data: " , res);
+    this.props.history.push("/orderPlaced");
+    } else {
+
+    }
+}*/}
+
+{/*handleInputChange = (event) => {
+    //this.setState({ [event.target.name]: event.target.data })
+}*/}
+ 
+//export default Cart;
